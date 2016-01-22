@@ -28,10 +28,10 @@
   var Thumbnail = React.createClass({
     render: function() {
       return  <div className="thumbnail">
-      <img src="http://placehold.it/500x300" alt="..."/>
+      <img src="{this.props.imgURL}" />
       <div className="caption">
-        <h3>Thumbnail label</h3>
-        <p>...</p>
+        <h3>{this.props.header}</h3>
+        <p>{this.props.description}</p>
         <p><a href="#" className="btn btn-primary" role="button">Button</a> <a href="#" className="btn btn-default" role="button">Button</a></p>
       </div>
     </div>
@@ -40,7 +40,10 @@
 
   var options = {
     title: 'Inbox',
-    number: 32
+    number: 32,
+    imgURL:'http://placehold.it/500x300',
+    header: 'Header Title',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus congue in arcu quis malesuada. Etiam eu nulla magna. Sed vel nunc ipsum.'
   }
 
   // ask react to render this class
