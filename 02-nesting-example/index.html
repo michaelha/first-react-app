@@ -25,13 +25,26 @@
     }
   });
 
+  var Thumbnail = React.createClass({
+    render: function() {
+      return  <div className="thumbnail">
+      <img src="http://placehold.it/500x300" alt="..."/>
+      <div className="caption">
+        <h3>Thumbnail label</h3>
+        <p>...</p>
+        <p><a href="#" className="btn btn-primary" role="button">Button</a> <a href="#" className="btn btn-default" role="button">Button</a></p>
+      </div>
+    </div>
+    }
+  });
+
   var options = {
     title: 'Inbox',
     number: 32
   }
 
   // ask react to render this class
-  var element = React.createElement(Badge, options);
+  var element = React.createElement(Thumbnail, options);
 
   // when we ask react to render this class, we will tell it
   // where to place the rendered element in the dom
