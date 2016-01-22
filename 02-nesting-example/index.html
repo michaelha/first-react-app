@@ -40,16 +40,41 @@
     }
   });
 
+  var ThumbnailList = React.createClass({
+    render: function() {
+
+    }
+  });
+
   var options = {
+    thumbnailData:
+
+    [{
     title: 'Read More',
     number: 32,
     imgURL:'http://placehold.it/500x300',
     header: 'Header Title',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus congue in arcu quis malesuada. Etiam eu nulla magna. Sed vel nunc ipsum.'
-  }
+  },
+  {
+  title: 'Read More',
+  number: 32,
+  imgURL:'http://placehold.it/500x300',
+  header: 'Header Title',
+  description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus congue in arcu quis malesuada. Etiam eu nulla magna. Sed vel nunc ipsum.'
+},{
+title: 'Read More',
+number: 32,
+imgURL:'http://placehold.it/500x300',
+header: 'Header Title',
+description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus congue in arcu quis malesuada. Etiam eu nulla magna. Sed vel nunc ipsum.'
+}
+
+
+]}
 
   // ask react to render this class
-  var element = React.createElement(Thumbnail, options);
+  var element = React.createElement(ThumbnailList, options);
 
   // when we ask react to render this class, we will tell it
   // where to place the rendered element in the dom
