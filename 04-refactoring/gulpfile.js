@@ -22,4 +22,23 @@ gulp.task('default', function(){
     fullPaths: true
   }));
 
+  // tells bundler to do something
+  function build(file) {
+    if(file) gutil.log('Recompiling ' + file);
+    return bundler
+      .bundle()
+      // if there's ever an error. console.log it
+      .on('error', gutil.log.bind(gutil, 'Browserify Error'))
+      // put the compiled file to main.js
+      .pipe(source('main.js'))
+      // like concat
+      .pipe(gulp.dest('./'));
+  }
+
+
+  // run gulp will immediately build
+  build();
+  // whenever we change file, build again
+  bundler.on('update', build);
+
 });
