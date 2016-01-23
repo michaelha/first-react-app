@@ -1,5 +1,5 @@
 var React = require('react');
-var Badge = require('./badge');
+var Badge = require('./badge'); 
 
 module.export = React.createClass({
   render: function() {
