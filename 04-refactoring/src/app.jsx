@@ -2,36 +2,21 @@ var React = require('react');
 var ThumbnailList = require('./thumbnail-list');
 
 var options = {
-  thumbnailData:
-
-  [{
-  title: 'Read More',
-  number: 32,
-  imgURL:'http://placehold.it/500x300',
-  header: 'Header Title',
-  description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus congue in arcu quis malesuada. Etiam eu nulla magna. Sed vel nunc ipsum.'
-},
-{
-title: 'Browse More',
-number: 42,
-imgURL:'http://placehold.it/500x300',
-header: 'Header Title 2',
-description: 'Hahaha ipsum dolor sit amet, consectetur adipiscing elit. Phasellus congue in arcu quis malesuada. Etiam eu nulla magna. Sed vel nunc ipsum.'
-},{
-title: 'Try This',
-number: 32,
-imgURL:'http://placehold.it/500x300',
-header: 'Header Title',
-description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus congue in arcu quis malesuada. Etiam eu nulla magna. Sed vel nunc ipsum.'
-}
+  thumbnailData:  [{
+    title: 'Show Courses',
+    number: 120,
+    header: 'Learn React',
+    description: 'React is a fantastic new front end library for rendering web pages. React is a fantastic new front end library for rendering web pages.',
+    imageUrl: 'https://raw.githubusercontent.com/wiki/facebook/react/react-logo-1000-transparent.png'
+  },{
+    title: 'Show Courses',
+    number: 25,
+    header: 'Learn Gulp',
+    description: 'Gulp will speed up your development workflow.  Gulp will speed up your development workflow.  Gulp will speed up your development workflow.',
+    imageUrl: 'http://brunch.io/images/others/gulp.png'
+  }]
+};
 
 
-]}
-
-// ask react to render this class
 var element = React.createElement(ThumbnailList, options);
-
-// when we ask react to render this class, we will tell it
-// where to place the rendered element in the dom
-//ReactDOM.render(element1, document.body);
 React.render(element, document.querySelector('.container'));
