@@ -1,18 +1,25 @@
+//require gulp
 var gulp = require('gulp');
-var react = require('gulp-react');
-var concat = require('gulp-concat');
+var gutil = require('gulp-util');
+var source = require('vinyl-source-stream');
+var browserify = require('browserify');
+// watchify watches for change files
+var watchify = require('watchify');
+var reactify = require('reactify');
 
 // initial gulp task default
 gulp.task('default', function(){
-  // will write a series of instruction for work to compile
-  // the following tells gulp to load all the file inside src directory
-  return gulp.src('src/**')
-    // .pipe chains the commands
-    // turn jsx into js
-    .pipe(react())
-    // do the next step
-    // join all the files together. new file is application.js
-    .pipe(concat('application.js'))
-    // save the new file in current working dir './'
-    .pipe(gulp.dest('./'))
+
+  var bundler = watchify(browserify({
+    // the main file
+    entries: ['./src/app.jsx'],
+    // just boilerplates below
+    transform: [reactify],
+    extensions: ['.jsx'],
+    debug: true,
+    cache: {},
+    packageCache: {},
+    fullPaths: true
+  }));
+
 });
